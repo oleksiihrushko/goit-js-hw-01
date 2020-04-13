@@ -1,5 +1,6 @@
 const country = prompt('Укажите страну доставки');
 let price;
+let notInList;
 
 const fixedCountry = country[0].toUpperCase() + country.slice(1).toLowerCase();
 
@@ -25,7 +26,9 @@ switch (fixedCountry) {
     break;
 
   default:
-    console.log('В вашей стране доставка не доступна');
+    notInList = true;
 }
 
-alert(`Доставка в ${fixedCountry} будет стоить ${price} кредитов`);
+notInList === true
+  ? alert('В вашей стране доставка не доступна')
+  : alert(`Доставка в ${fixedCountry} будет стоить ${price} кредитов`);
